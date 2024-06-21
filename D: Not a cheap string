@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void helper()
+{
+    string s;
+    cin>>s;
+    int p;
+    cin>>p;
+    string w=s;
+    int sum =0;
+    for(int i=0; i<s.length(); i++)
+    {
+        sum += s[i]-'a' + 1;
+    }
+    if(sum<=p)
+    {
+        cout<<s<<endl;
+        return;
+    }
+    else
+    {
+        sort(w.begin(), w.end());
+        reverse(w.begin(), w.end());
+        unordered_map<char, int> mp;
+        int x= w.size();
+        int i=0;
+        while(sum>p and x>0)
+        {
+            char c= w[i];
+            sum -= ((c-'a')+1);
+            mp[c]++;
+            i++;
+        }
+        string res="";
+        for(int i=0; i<s.length(); i++)
+        {
+            char c= s[i];
+            if(mp[c]>0)
+            {
+                mp[c]--;
+            }
+            else
+            {
+                res+= c;
+            }
+        }
+        cout<<res<<endl;
+    }
+}
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
