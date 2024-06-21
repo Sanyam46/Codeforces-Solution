@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void helper()
+{
+    long long n;
+    cin>>n;
+    int i;
+    long long x = 1;
+    for(i=0; i<=9; i++)
+    {
+        if(n >= x*10)
+        {
+            x= x*10;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout<<n-x<<endl;
+}
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
