@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void helper()
+{
+    int n;
+    cin>>n;
+    char c;
+    cin>>c;
+    string s;
+    cin>>s;
+    string res="";
+    int i=0;
+    for(i=0; i<s.length(); i++)
+    {
+        if(s[i]>=c)
+        {
+           res+= s[i];
+        }
+        else 
+        {
+            res+= c;
+            break;
+        }
+    }
+    while(i<s.length())
+    {
+        res+= s[i];
+        i++;
+    }
+    if(res==s)
+    {
+        res+= c;
+    }
+    cout<<res<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}  
