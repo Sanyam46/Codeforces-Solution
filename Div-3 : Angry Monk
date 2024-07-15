@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void helper()
+{
+    int n, k;
+    cin>>n>>k;
+    vector<int> arr(k);
+    int sum = 0;
+    int maxi = INT_MIN;
+    for(auto &i : arr)
+    {
+        cin>>i;
+        sum += i;
+        maxi = max(i , maxi);
+    }
+    sum -= maxi;
+    cout<<sum*2 + (1-k)<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
