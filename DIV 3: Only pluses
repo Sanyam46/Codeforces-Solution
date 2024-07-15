@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+void helper()
+{
+    int a,b,c;
+    cin>>a>>b>>c;
+    int cnt=1;
+    while(cnt<=5)
+    {
+        int mini = min({a,b,c});
+        cnt++;
+        if(a==mini) a++;
+        else if(b==mini) b++;
+        else c++;
+    }
+    cout<<a*b*c<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
