@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void helper()
+{
+    int n;
+    cin>>n;
+    string s,t;
+    cin>>s>>t;
+    int a=0, b=0 , c=0, d=0;
+    bool f=1;
+    for(int i=0; i<n; i++)
+    {
+        if(s[i]=='0' and t[i]=='1')
+        {
+            cout<<"NO"<<endl;
+            return;
+        }
+        if(s[i]=='0' and t[i]=='0')
+        {
+            continue;
+        }
+        else
+        {
+            break;
+        }
+    }
+    cout<<"YES"<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
