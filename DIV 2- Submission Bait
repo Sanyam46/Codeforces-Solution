@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void helper()
+{
+    int n;
+    cin>>n;
+    vector<int> arr(n);
+    map<int, int> mp;
+    for(auto &i: arr)
+    {
+        cin>>i;
+        mp[i]++;
+    }
+    bool f=1;
+    for(auto i: mp)
+    {
+        if(i.second%2==1)
+        {
+            cout<<"YES"<<endl;
+            return;
+        }
+    }
+    
+    cout<<"NO"<<endl;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        helper();
+    }
+    return 0;
+}
